@@ -50,7 +50,7 @@ export const ResponsiveBarChart = ({
                 />
                 <YAxis
                     domain={[0, "dataMax"]}
-                    tickCount={13}
+                    tickCount={8}
                     tick={{
                         stroke: "light-grey",
                         strokeWidth: 0.5,
