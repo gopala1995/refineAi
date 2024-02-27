@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import ReactApexChart from "react-apexcharts";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { Card } from "./Card";
+import data from "../../Data.json";
 
 const ApexChart = () => {
   const [chartData] = useState({
@@ -96,12 +98,12 @@ const ApexChart = () => {
   return (
     <div className="bg-white rounded-[10px]">
       <div className="flex mb-5 justify-between">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {data.map((items, index) => (
+          <Card key={index} props={items} />
+        ))}
+        <div className="items-center mt-12 mr-2">
+          <ChevronDownIcon className="h-4 w-4" />
+        </div>
       </div>
       <div id="chart">
         <ReactApexChart
